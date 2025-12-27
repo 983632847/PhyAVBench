@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhyAVBench - Project Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <h1 class="title">PhyAVBench: A Challenging Audio Physics-Sensitivity Benchmark for Physically Grounded
+                Text-to-Audio-Video Generation</h1>
+            <div class="logo-container">
+                <img src="images/logo.png" alt="PhyAVBench Logo" class="logo">
+            </div>
+            <div class="authors">
+                <div class="author-row">
+                    <span class="author">Tianxin Xie<sup>1,2,†</sup></span>,
+                    <span class="author">Wentao Lei<sup>1,†</sup></span>,
+                    <span class="author">Guanjie Huang<sup>1,†</sup></span>,
+                    <span class="author">Pengfei Zhang<sup>1,†</sup></span>,
+                    <span class="author">Chunhui Zhang<sup>1,3</sup></span>,
+                    <span class="author">Fengji Ma<sup>1</sup></span>,
+                    <span class="author">Haoyu He<sup>1</sup></span>,
+                    <span class="author">Han Zhang<sup>1</sup></span>,
+                    <span class="author">Jiangshan He<sup>1</sup></span>,
+                    <span class="author">Jinting Wang<sup>1</sup></span>,
+                    <span class="author">Kai Jiang<sup>1</sup></span>,
+                    <span class="author">Linghan Fang<sup>4</sup></span>,
+                    <span class="author">Lufei Gao<sup>1</sup></span>,
+                    <span class="author">Orkesh Ablet<sup>1</sup></span>,
+                    <span class="author">Ruolin Hu<sup>1</sup></span>,
+                    <span class="author">Shengyu Li<sup>1</sup></span>,
+                    <span class="author">Weilin Lin<sup>1,5</sup></span>,
+                    <span class="author">Xiaoyang Feng<sup>1</sup></span>,
+                    <span class="author">Xinyue Yang<sup>1</sup></span>,
+                    <span class="author">Yan Rong<sup>1</sup></span>,
+                    <span class="author">Yanyun Wang<sup>1</sup></span>,
+                    <span class="author">Zihang Shao<sup>1</sup></span>,
+                    <span class="author">Peihua Zhang<sup>5</sup></span>,
+                    <span class="author">Chenxing Li<sup>2</sup></span>,
+                    <span class="author">Shan Yang<sup>5</sup></span>,
+                    <span class="author">Dong Yu<sup>2</sup></span>,
+                    <span class="author">Li Liu<sup>1,*</sup></span>
+                </div>
+                <div class="affiliations">
+                    <span><sup>1</sup>HKUST(GZ), </span>
+                    <span><sup>2</sup>Tencent AI Lab, </span>
+                    <span><sup>3</sup>Shanghai Jiao Tong University, </span>
+                    <span><sup>4</sup>Technical University of Munich, </span>
+                    <span><sup>5</sup>Tencent</span>
+                </div>
+                <div class="contributions">
+                    <p><sup>†</sup>Core contributors.</p>
+                    <p><sup>*</sup>Corresponding author: Li LIU, avrillliu@hkust-gz.edu.cn</p>
+                </div>
+            </div>
+            <!-- <div class="links">
+                <a href="#" class="link-btn">Paper</a>
+                <a href="#" class="link-btn">Code</a>
+                <a href="#" class="link-btn">Dataset</a>
+                <a href="#" class="link-btn">Citation</a>
+            </div> -->
+        </header>
+
+        <!-- Abstract Section -->
+        <section class="section">
+            <h2>Abstract</h2>
+            <p class="abstract">
+                Text-to-audio–video (T2AV) generation underpins a wide range of applications demanding realistic
+                audio-visual content, including virtual reality, world modeling, gaming, and filmmaking.
+                However, existing T2AV models remain incapable of generating physically plausible sounds, primarily due
+                to their limited understanding of physical principles and the lack of dedicated datasets.
+                To situate current research progress, we present PhyAVBench, a challenging audio physics-sensitivity
+                benchmark designed to systematically evaluate the audio physics grounding capabilities of existing T2AV
+                models.
+                PhyAVBench comprises 1,000 groups of paired text prompts with controlled physical variables that
+                implicitly induce directional sound variations, enabling a fine-grained assessment of models'
+                sensitivity to changes in underlying acoustic conditions.
+                We term this evaluation paradigm the Audio-Physics Sensitivity Test (APST).
+                Unlike prior benchmarks that primarily focus on audio-video synchronization, PhyAVBench explicitly
+                evaluates models' understanding of the physical mechanisms underlying sound generation, covering 6 major
+                audio physics dimensions, 4 daily scenarios (music, sound effects, speech, and their mix), and 50
+                fine-grained test points, ranging from fundamental aspects such as sound diffraction and reverberation
+                to more complex phenomena, e.g., vortex shedding and Helmholtz resonance.
+                Each test point consists of multiple groups of paired prompts, where each prompt is grounded by at least
+                20 newly recorded or collected real-world videos, thereby minimizing the risk of data leakage during
+                model pre-training.
+                Both prompts and videos are iteratively refined through rigorous human-involved error correction and
+                quality control to ensure high quality.
+                We argue that only models with a genuine grasp of audio-related physical principles can generate
+                physically consistent audio-visual content.
+                We hope PhyAVBench will stimulate future progress in this critical yet largely unexplored domain.
+            </p>
+        </section>
+
+        <!-- Data Distribution Section -->
+        <section class="section">
+            <h2>Data Distribution</h2>
+            <figure class="image-figure">
+                <img src="images/project_page_data_distribution.png" alt="Data Distribution" class="distribution-image">
+                <figcaption>Fig. 1: The data distribution of PhyAVBench.</figcaption>
+            </figure>
+        </section>
+
+        <!-- Audio-Physics Sensitivity Test Section -->
+        <section class="section">
+            <h2>Audio-Physics Sensitivity Test</h2>
+            <figure class="image-figure">
+                <img src="images/apst.png" alt="Audio-Physics Sensitivity Test" class="distribution-image"
+                    style="width: 700px; max-width: 100%; margin: 0 auto; display: block;">
+                <figcaption>Fig. 2: The audio physics–sensitivity test paradigm of
+                    PhyAVBench. For each group of prompts, the directional
+                    changes of generated audio features are compared against the
+                    corresponding ground-truth directions to compute a contrastive
+                    physical response score.</figcaption>
+            </figure>
+        </section>
+
+        <!-- Data Curation Pipeline Section -->
+        <section class="section">
+            <h2>Data Curation Pipeline</h2>
+            <figure class="image-figure">
+                <img src="images/pipeline.png" alt="Data Curation Pipeline" class="distribution-image">
+                <figcaption>Fig. 3: The data curation pipeline of PhyAVBench.</figcaption>
+            </figure>
+        </section>
+
+        <!-- Sample Videos Section -->
+        <section class="section">
+            <h2>Sample Videos</h2>
+            <div class="video-pairs-container">
+                <!-- Video Pair 1 -->
+                <div class="video-pair">
+                    <div class="video-item-pair">
+                        <div class="video-wrapper">
+                            <video controls>
+                                <source src="videos/m01_c03_t08_s02_g009_A01.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <p class="video-description">Close-up shot, static camera. A hand taps the wooden table
+                            repeatedly and <span class="highlight">slowly</span> using the tip of a ballpoint pen.
+                            Indoor.</p>
+                        <p class="video-filename">m01_c03_t08_s02_g009_A01</p>
+                    </div>
+                    <div class="video-item-pair">
+                        <div class="video-wrapper">
+                            <video controls>
+                                <source src="videos/m01_c03_t08_s02_g009_B01.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <p class="video-description">Close-up shot, static camera. A hand taps the wooden table
+                            repeatedly and <span class="highlight">quickly</span> using the tip of a ballpoint pen.
+                            Indoor.</p>
+                        <p class="video-filename">m01_c03_t08_s02_g009_B01</p>
+                    </div>
+                </div>
+                <!-- Video Pair 2 -->
+                <div class="video-pair">
+                    <div class="video-item-pair">
+                        <div class="video-wrapper">
+                            <video controls>
+                                <source src="videos/m01_c03_t08_s02_g011_A01.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <p class="video-description">Close-up, static camera. An index finger <span
+                                class="highlight">slowly</span> and repeatedly presses the spacebar of a mechanical
+                            keyboard multiple times. Other keys remain still. Indoor.</p>
+                        <p class="video-filename">m01_c03_t08_s02_g011_A01</p>
+                    </div>
+                    <div class="video-item-pair">
+                        <div class="video-wrapper">
+                            <video controls>
+                                <source src="videos/m01_c03_t08_s02_g011_B01.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <p class="video-description">Close-up, static camera. An index finger <span
+                                class="highlight">quickly</span> and repeatedly presses the spacebar of a mechanical
+                            keyboard multiple times. Other keys remain still. Indoor.</p>
+                        <p class="video-filename">m01_c03_t08_s02_g011_B01</p>
+                    </div>
+                </div>
+                <!-- Video Pair 3 -->
+                <div class="video-pair">
+                    <div class="video-item-pair">
+                        <div class="video-wrapper">
+                            <video controls>
+                                <source src="videos/m02_c05_t14_s02_g004_A01.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <p class="video-description">Close-up, static camera. Water flows into a cup at a <span
+                                class="highlight">slow, gentle rate</span>. Indoor.</p>
+                        <p class="video-filename">m02_c05_t14_s02_g004_A01</p>
+                    </div>
+                    <div class="video-item-pair">
+                        <div class="video-wrapper">
+                            <video controls>
+                                <source src="videos/m02_c05_t14_s02_g004_B01.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <p class="video-description">Close-up, static camera. Water flows into a cup at a <span
+                                class="highlight">fast, strong rate</span>. Indoor.</p>
+                        <p class="video-filename">m02_c05_t14_s02_g004_B01</p>
+                    </div>
+                </div>
+                <!-- Video Pair 4 -->
+                <div class="video-pair">
+                    <div class="video-item-pair">
+                        <div class="video-wrapper">
+                            <video controls>
+                                <source src="videos/m05_c18_t45_s02_g006_A01.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <p class="video-description">Close-up shot, static camera focused on a retractable ballpoint pen
+                            held in one hand; the thumb presses and releases the top button with <span
+                                class="highlight">aperiodic, irregular timing</span>; indoor, quiet.</p>
+                        <p class="video-filename">m05_c18_t45_s02_g006_A01</p>
+                    </div>
+                    <div class="video-item-pair">
+                        <div class="video-wrapper">
+                            <video controls>
+                                <source src="videos/m05_c18_t45_s02_g006_B01.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <p class="video-description">Close-up shot, static camera focused on a retractable ballpoint pen
+                            held in one hand; the thumb presses and releases the top button with <span
+                                class="highlight">periodic, regular timing</span>; indoor, quiet.</p>
+                        <p class="video-filename">m05_c18_t45_s02_g006_B01</p>
+                    </div>
+                </div>
+                <!-- Video Pair 5 -->
+                <div class="video-pair">
+                    <div class="video-item-pair">
+                        <div class="video-wrapper">
+                            <video controls>
+                                <source src="videos/m05_c18_t45_s02_g020_A01.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <p class="video-description">Close-up, static camera. An index finger clicks the left mouse
+                            button repeatedly with <span class="highlight">irregular, aperiodic timing</span>. Indoor.
+                        </p>
+                        <p class="video-filename">m05_c18_t45_s02_g020_A01</p>
+                    </div>
+                    <div class="video-item-pair">
+                        <div class="video-wrapper">
+                            <video controls>
+                                <source src="videos/m05_c18_t45_s02_g020_B01.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <p class="video-description">Close-up, static camera. An index finger clicks the left mouse
+                            button repeatedly with <span class="highlight">regular, periodic timing</span>. Indoor.</p>
+                        <p class="video-filename">m05_c18_t45_s02_g020_B01</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Citation Section
+        <section class="section">
+            <h2>Citation</h2>
+            <div class="citation-box">
+                <pre><code>@article{phyavbench2024,
+  title={PhyAVBench: A Benchmark for Physical Audio-Visual Understanding},
+  author={Author Name and Author Name and Author Name},
+  journal={Conference/Journal Name},
+  year={2024}
+}</code></pre>
+            </div>
+        </section> -->
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2025 PhyAVBench Team. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
