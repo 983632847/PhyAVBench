@@ -113,12 +113,120 @@
             <figure class="image-figure">
                 <img src="images/apst.png" alt="Audio-Physics Sensitivity Test" class="distribution-image"
                     style="width: 700px; max-width: 100%; margin: 0 auto; display: block;">
-                <figcaption>Fig. 2: The audio physics–sensitivity test paradigm of
-                    PhyAVBench. For each group of prompts, the directional
-                    changes of generated audio features are compared against the
-                    corresponding ground-truth directions to compute a contrastive
-                    physical response score.</figcaption>
+                <figcaption>Fig. 2: Overview of the PhyAVBench evaluation framework. The Audio-Physics Sensitivity Test
+                    (APST)
+                    uses paired prompts that differ by a single physical variable (e.g., material). By comparing the
+                    directional trends of generated audio features against ground-truth physical laws, we calculate the
+                    Contrastive Physical Response Score (CPRS) to assess the model's understanding of real-world
+                    physics.</figcaption>
             </figure>
+        </section>
+
+        <!-- Benchmark Comparison Section -->
+        <section class="section">
+            <h2>Comparison with Existing Benchmarks</h2>
+            <div class="table-title">
+                <p class="table-title-main">TABLE I: Comparison of unified audio-video generation benchmarks across
+                    audio-physics coverage, controlled setting, acoustic scenario coverage, data origin, ground-truth
+                    video numbers, and evaluation metrics.</p>
+                <p class="table-title-note">SAVGBench evaluates unconditioned audio-video generation. VABench
+                    contains only text prompts and conducts evaluation using MLLM.</p>
+            </div>
+            <div class="table-container">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th rowspan="2">Benchmark</th>
+                            <th rowspan="2">Audio-Physics Coverage</th>
+                            <th rowspan="2">Controlled Setting with Paired Samples</th>
+                            <th colspan="4">Acoustic Scenario Coverage</th>
+                            <th rowspan="2">Newly Collected</th>
+                            <th rowspan="2">#GT Videos per Prompt</th>
+                            <th rowspan="2">Evaluation Metric</th>
+                        </tr>
+                        <tr>
+                            <th>Music</th>
+                            <th>SFX</th>
+                            <th>Speech</th>
+                            <th>Mix</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>TAVGBench</td>
+                            <td class="check-cell">✗</td>
+                            <td class="check-cell">✗</td>
+                            <td class="check-cell check-yes">✓</td>
+                            <td class="check-cell check-yes">✓</td>
+                            <td class="check-cell check-yes">✓</td>
+                            <td class="check-cell check-yes">✓</td>
+                            <td class="check-cell">✗</td>
+                            <td>1</td>
+                            <td>AV-Align</td>
+                        </tr>
+                        <tr>
+                            <td>SAVGBench</td>
+                            <td>1 Test Point</td>
+                            <td class="check-cell">✗</td>
+                            <td class="check-cell check-yes">✓</td>
+                            <td class="check-cell">✗</td>
+                            <td class="check-cell check-yes">✓</td>
+                            <td class="check-cell">✗</td>
+                            <td class="check-cell">✗</td>
+                            <td>-</td>
+                            <td>AV&Spatial-Align</td>
+                        </tr>
+                        <tr>
+                            <td>Verse-Bench</td>
+                            <td class="check-cell">✗</td>
+                            <td class="check-cell">✗</td>
+                            <td class="check-cell check-yes">✓</td>
+                            <td class="check-cell check-yes">✓</td>
+                            <td class="check-cell check-yes">✓</td>
+                            <td class="check-cell check-yes">✓</td>
+                            <td class="check-cell check-yes">✓</td>
+                            <td>1</td>
+                            <td>AV-Align</td>
+                        </tr>
+                        <tr>
+                            <td>JavisBench</td>
+                            <td class="check-cell">✗</td>
+                            <td class="check-cell">✗</td>
+                            <td class="check-cell check-yes">✓</td>
+                            <td class="check-cell check-yes">✓</td>
+                            <td class="check-cell check-yes">✓</td>
+                            <td class="check-cell check-yes">✓</td>
+                            <td>✓ (partial)</td>
+                            <td>1</td>
+                            <td>AV-Align</td>
+                        </tr>
+                        <tr>
+                            <td>VABench</td>
+                            <td>4 Test Points</td>
+                            <td class="check-cell">✗</td>
+                            <td class="check-cell check-yes">✓</td>
+                            <td class="check-cell check-yes">✓</td>
+                            <td class="check-cell check-yes">✓</td>
+                            <td class="check-cell check-yes">✓</td>
+                            <td>-</td>
+                            <td>0</td>
+                            <td>AV&Stereo Align</td>
+                        </tr>
+                        <tr class="phyavbench-row">
+                            <td><strong>PhyAVBench (Ours)</strong></td>
+                            <td>6 Dimensions & 50 Test Points</td>
+                            <td class="check-cell check-yes">✓</td>
+                            <td class="check-cell check-yes">✓</td>
+                            <td class="check-cell check-yes">✓</td>
+                            <td class="check-cell check-yes">✓</td>
+                            <td class="check-cell check-yes">✓</td>
+                            <td class="check-cell check-yes">✓</td>
+                            <td>≥ 20</td>
+                            <td>AV-Align & Physics Sensitivity Test</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
 
         <!-- Data Curation Pipeline Section -->
