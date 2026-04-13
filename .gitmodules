@@ -1,0 +1,6 @@
+[submodule "third_party/ImageBind"]
+	path = third_party/ImageBind
+	url = https://github.com/facebookresearch/ImageBind.git
+[submodule "third_party/CLAP"]
+	path = third_party/CLAP
+	url = https://github.com/LAION-AI/CLAP.git
