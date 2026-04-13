@@ -250,3 +250,13 @@ If you find this work helpful, please consider citing it:
 ```
 
 If you have any questions, feel free to contact us at txie151[at]connect.hkust-gz.edu.cn.
+
+## Star History
+
+<a href="https://www.star-history.com/?repos=imxtx%2FPhyAVBench&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=imxtx/PhyAVBench&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=imxtx/PhyAVBench&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=imxtx/PhyAVBench&type=date&legend=top-left" />
+ </picture>
+</a>
