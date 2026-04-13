@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <a href="https://arxiv.org/abs/2512.23994"><img src="https://img.shields.io/badge/arXiv-1234.56789-b31b1b.svg" alt="arXiv"/></a>
+  <a href="https://arxiv.org/abs/2512.23994"><img src="https://img.shields.io/badge/arXiv-2512.23994-b31b1b.svg" alt="arXiv"/></a>
   <img src="https://img.shields.io/badge/Project-Page-blue" alt="Project Page"/>
 </p>
 
